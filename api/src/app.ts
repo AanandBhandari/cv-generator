@@ -7,10 +7,12 @@ import { failure } from "./utils/helper";
 
 dotenv.config();
 const app: Application = express();
-//server middleware
+//server middleware;
 app.use(express.json());
 app.use(cors());
+app.use(express.static(__dirname + "/public"));
 
+//route middleware
 app.use("/api", router);
 //test root route
 app.get("/", async (req: Request, res: Response) => {
