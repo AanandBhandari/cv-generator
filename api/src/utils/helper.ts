@@ -4,7 +4,6 @@ import pdf, {CreateOptions} from 'html-pdf';
 import { ICV } from '../interfaces/index.interface';
 
 
-
 export const success = (data: any, message?: string) => {
   return {
     status: "success",
