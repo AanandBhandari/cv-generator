@@ -3,7 +3,9 @@ declare global {
    export interface ProcessEnv {
       ENVIRONMENT: string;
       SITE: string;
+      SOCKET_SITE: string;
       PORT: string;
+      SOCKET_PORT: number;
     }
   }
 }

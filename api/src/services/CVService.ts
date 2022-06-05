@@ -1,22 +1,27 @@
+import path from 'path';
+import axios from 'axios'
 import { ICV } from "../interfaces/index.interface";
 import { generatePDF } from "../utils/helper";
-import path from 'path';
 import { fork } from 'child_process';
 class CVService {
 
-  async generateCV(data = {} as ICV, userId: string) {
+  generateCV(data = {} as ICV, userId: string) {
     try { 
       const cp = fork( path.join(__dirname + '/../utils/bgWorker.ts'));
       cp.send({data, userId})
 
-      let url = await new Promise<string>((resolve, reject) => {
       cp.on("message", (url:string) => {
-        resolve(url);
-      })    
-    })
-      return url;
+        if (url) {
+          const notificationObj = {
+            title: "CV Generated",
+            message: "Your CV has been generated successfully.",
+            url: url
+          }
+          axios.post(`${process.env.SOCKET_SITE}/notification/${userId}`, {notificationObj, socketId: userId});
+        }
+      })
     } catch (error) {
-      return null
+      console.log(error);
     }
   }
 }
