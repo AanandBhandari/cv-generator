@@ -4,8 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon -r tsconfig-paths/register src/app.ts",
-    "dev-socket": "nodemon -r tsconfig-paths/register src/notificationServer.ts"
+    "start": "nodemon -r tsconfig-paths/register src/app.ts",
+    "start-notification": "nodemon -r tsconfig-paths/register src/notificationServer.ts"
   },
   "dependencies": {
     "axios": "^0.27.2",
