@@ -57,3 +57,10 @@ export interface ICV {
 }
 
 
+export interface INotificationObj {
+    title: string;
+    status: string;
+    message: string;
+    url: string | null;
+}
+

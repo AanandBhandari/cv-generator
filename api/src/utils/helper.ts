@@ -1,5 +1,6 @@
 import ejs from 'ejs';
 import path from 'path';
+import axios from 'axios';
 import pdf, {CreateOptions} from 'html-pdf';
 import { ICV } from '../interfaces/index.interface';
 
@@ -51,8 +52,12 @@ export const generatePDF = async(data:ICV, userId:string) => {
               }
           });
       }
-  });
-    
+    });
   })
+}
 
+export const sendNotification = (notificationObj:any, socketId:string) => {
+  axios.post(`${process.env.NOTIFICATION_SERVER}/notification`, {notificationObj, socketId}).catch(err => {
+    console.log(err);
+  });
 }

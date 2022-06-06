@@ -32,6 +32,6 @@ app.use(function (err: Error, req: Request, res: Response, next: NextFunction) {
   return res.status(500).json(failure(err.message || "Something went wrong!"));
 });
 
-const PORT = process.env.PORT || 5002;
+const PORT = process.env.PORT || 5003;
 
-app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
+app.listen(PORT, () => console.log(`API Server is running on port ${PORT}`));
