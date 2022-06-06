@@ -5,7 +5,7 @@ CV-Generator
 Nodejs/Expressjs, ejs, socket.io
 </p>
 
-> CV Generator is a API for generating CV. Firt, User connet to the notification socket server and get userId(socketId) from there. Now, User send CV information to the main API server along with that userId, the server creates CV in pdf format using background process so that main thread has less load and response back to the user with a message. After CV is created, the server send notificaiton object along with CV generated url and that userId to the notificaiton server. And finally, notificaton server sends realtime notificaton to the user.
+> CV Generator is a API for generating CV. First, User connect to the notification socket server and get userId(socketId) from there. Now, User send CV information to the main API server along with that userId, the server creates CV in pdf format using background process so that main thread has less load and response back to the user with a message. After CV is created, the server send notificaiton object along with CV generated url and that userId to the notificaiton API server. Notification API server communicate and passes the notification object along with userId(socketId) to notificaton socket server.And finally, notificaton socket server emits realtime notificaton to the user.
 
 
 ## clone or download
@@ -39,7 +39,7 @@ $ npm run start // run main API server locally
 $ npm run start-notification // run notification API server along with socket server locally
 ```
 
-### ENV variables
+### ENV variables inside api folder
 ```terminal
 SITE=http://localhost:5003
 PORT=5003
