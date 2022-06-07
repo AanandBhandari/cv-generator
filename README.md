@@ -50,13 +50,13 @@ SOCKET_PORT=3000
 
 # Screenshots of this project
 
-User connect to the notification socket server and get userId(socketId)
-![User connect to the notification server](https://res.cloudinary.com/dttllxiw2/image/upload/v1654503581/Screenshot_from_2022-06-06_13-57-17_riaajn.png)
+1. User connect to the notification socket server on port 3000 and get userId(socketId)
+![User connect to the notification server](https://res.cloudinary.com/dttllxiw2/image/upload/v1654572885/Screenshot_from_2022-06-07_09-18-46_kgknce.png)
 
-User send CV information along with userid(socketId) to the main API server
+2. User send CV information along with userid(socketId) to the main API server on port 5004
 ![User sends CV information](https://res.cloudinary.com/dttllxiw2/image/upload/v1654503582/Screenshot_from_2022-06-06_13-59-20_cjjgbh.png)
 
-The notification socket server emits the notificaton to the client 
+3. The notification socket server emits the notificaton to the user 
 ![User receive notificaton ](https://res.cloudinary.com/dttllxiw2/image/upload/v1654503582/Screenshot_from_2022-06-06_14-00-16_jdzd5j.png)
 
 The final output of the CV
